@@ -8,8 +8,8 @@
   "pages": [{
     "properties": {
       "项目名称": "Telegram Relay for Agent",
-      "GitHub": "https://github.com/spudhsu-lemon/telegram-relay-for-agent",
-      "描述": "Telegram relay bot for Cursor Cloud Agent - receives files/videos and saves to local directory"
+      "GitHub": "https://github.com/supersheep/telegram-relay-for-agent",
+      "描述": "Telegram relay bot for Cursor Cloud Agent - receives files/videos and saves to ~/.telegram-relay/uploads/<project>/"
     }
   }]
 }
@@ -19,4 +19,4 @@
 
 | 项目名称 | GitHub | 描述 |
 |----------|--------|------|
-| Telegram Relay for Agent | https://github.com/spudhsu-lemon/telegram-relay-for-agent | Telegram relay bot for Cursor Cloud Agent - receives files/videos and saves to local directory |
+| Telegram Relay for Agent | https://github.com/supersheep/telegram-relay-for-agent | Telegram relay bot for Cursor Cloud Agent - receives files/videos and saves to ~/.telegram-relay/uploads/<project>/ |
