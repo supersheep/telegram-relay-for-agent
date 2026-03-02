@@ -1,0 +1,9 @@
+{
+  "install": "npm install",
+  "terminals": [
+    {
+      "name": "Telegram Relay Bot",
+      "command": "node index.mjs"
+    }
+  ]
+}

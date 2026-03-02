@@ -1,0 +1,17 @@
+{
+  "name": "telegram-relay-for-agent",
+  "version": "1.0.0",
+  "description": "Telegram relay bot for Cursor Cloud Agent - receives files/videos and saves to local directory",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs",
+    "relay": "node index.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "grammy": "^1.28.0"
+  }
+}
