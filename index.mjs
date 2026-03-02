@@ -2,15 +2,17 @@
 /**
  * Telegram Relay Bot for Cursor Cloud Agent
  *
- * Receives files/videos/photos from Telegram and saves them to ./uploads/
- * Configure via env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID (optional, for access control)
+ * Receives files/videos/photos from Telegram and saves them to ~/.telegram-relay/uploads/<project>/
+ * Configure via env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID (optional), TELEGRAM_RELAY_PROJECT (optional, default: cwd basename)
  */
 
 import { Bot } from "grammy";
 import { mkdir, writeFile } from "fs/promises";
-import { join } from "path";
+import { join, basename } from "path";
+import { homedir } from "os";
 
-const UPLOAD_DIR = "./uploads";
+const project = process.env.TELEGRAM_RELAY_PROJECT || basename(process.cwd()) || "default";
+const UPLOAD_DIR = join(homedir(), ".telegram-relay", "uploads", project);
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const allowedChatId = process.env.TELEGRAM_CHAT_ID
   ? String(process.env.TELEGRAM_CHAT_ID).trim()
@@ -77,5 +79,5 @@ bot.catch((err) => {
   console.error("[telegram-relay] Bot error:", err);
 });
 
-console.log("[telegram-relay] Starting... (uploads → ./uploads/)");
+console.log(`[telegram-relay] Starting... (uploads → ${UPLOAD_DIR})`);
 await bot.start();

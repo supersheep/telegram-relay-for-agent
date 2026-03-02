@@ -1,6 +1,4 @@
 node_modules/
-uploads/*
-!uploads/.gitkeep
 .env
 .env.local
 *.log
